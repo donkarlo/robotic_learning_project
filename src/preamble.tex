@@ -1,0 +1,70 @@
+\documentclass{book}
+
+% ======================
+% Packages (load after \documentclass)
+% ======================
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage[table]{xcolor}   % table row/col coloring
+\usepackage{array}            % better tables
+\usepackage[colorinlistoftodos]{todonotes}
+\setcounter{tocdepth}{4}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+% Graphics
+\usepackage{tikz}
+
+%%to use svg images
+\usepackage{svg}
+
+
+%%
+\definecolor{mainfill}{HTML}{FFF2CC}
+\definecolor{mainborder}{HTML}{D6B656}
+\tikzset{
+    mainnode/.style={
+        draw=mainborder,
+        fill=mainfill,
+        rectangle,
+        align=center,
+        inner sep=5pt,
+        rounded corners,
+        line width=0.8pt,
+        text=black,
+    }
+}
+%% fit is for process I think
+\usetikzlibrary{graphs,graphdrawing,arrows.meta,mindmap,fit,positioning}
+\usegdlibrary{layered,force}
+
+%% For hierarchical trees
+\usepackage[edges]{forest}
+
+%% Enforce non-floating placement with [H]
+\usepackage{float}
+\usepackage{caption}
+%% moves all figure captions to right
+\captionsetup{singlelinecheck=false}
+
+
+% Convenience macro for clickable file paths (you already had this)
+\newcommand{\filepath}[1]{\href{file://#1}{\path{#1}}}
+
+% This part is for another and better form code highlighting
+\usepackage{minted}
+\usemintedstyle{friendly}
+%%setting for all syntaxes
+\setminted{
+    fontsize=\small,
+    linenos,
+    breaklines,
+    frame=single,
+    tabsize=4,
+    autogobble,
+}
+%% if you want something special for python
+\setminted[python]{fontsize=\footnotesize}
+%% a short form for minted python inline
+\newcommand{\pyl}[1]{\mintinline{python}{#1}}
