@@ -1,2 +1,83 @@
 \chapter{ROS}
-Hi This is ros
+    
+    
+\section{Names}
+    see \url{https://wiki.ros.org/Names}
+    
+    Name structures are as follow:
+    /<namespace>/<node or topic or service>
+    such as /uav1/odometry/odom\_gps in which uav1 is a namespace and odometry is a sub namespace va \texttt{odom\_gps} is topic final name.
+    subname space doesnt exist in ROS jargon. It is just for explanation
+
+\section{TF}
+    A package responsible for managing and publishing coordinate frames and transformation between them.
+    
+    TF keeps all the frames in a directed tree called ''Transform tree''
+    
+    
+    map is coming from GPS which is from world frame. base\_link is robots body and lidar\_link as well
+    map → odom → base\_link → lidar\_link
+    
+    \paragraph{time\_stamped}
+        Each transform is published with timestamp
+        
+    
+\section{Messages}
+    \subsection{geometry\_msgs}
+    \subsection{nav\_msgs}
+        \paragraph{Odometry}
+            has Pose of 7 dimensions (3 for position and 4 quaternions) and 6 as twist or velocity (3 linear velocity and 3 angular)
+    \subsection{sensor\_msgs}
+        \paragraph{LaserScan}
+    \subsection{diagnostic\_msgs}
+    \subsection{actionlib\_msgs}
+\section{Topics}
+    Is a communication channel to which nodes can publish messages or subscribe for messages
+
+    \paragraph{Notes}
+        They are ros runtime proccesses
+        \begin{itemize}
+            \item each topic can have as many publishers and subscribers that you need but the message types must be always the same
+        \end{itemize}
+\section{Node}
+    Node a piece of runable code in ROS. It is either a c++/python code or a Gazebo plugin
+\section{RQT Graph}
+    Is a visual tool that shows nodes as boxes and topics as ovals and the direction of the edges show publisher and subscriber nodes
+\section{RQT console}
+    To visualize logs
+\section{Bags}
+\section{Frames}
+\section{Parameters}
+\section{Services}
+    request-response communication form. Such as calling gazebo/get\_model\_state and getting models location
+\section{Action}
+Is a combination of services and topics for a longterm task with feedback
+
+\section{rviz}
+    For visualizing data from sensors
+
+\section{Goal}
+\section{MAVROS}
+\section{MAVLINK}
+\section{QGroundControl}
+\section{Flight controller}
+    It is the hardware board and it usually contains
+    \begin{itemize}
+        \item IMU
+        \item Barometer (for height)
+        \item GNSS
+        \item Microcontroller/cpu
+        \item I/O ports
+    \end{itemize}
+
+    examples:
+    \begin{itemize}
+        \item Pixhawk
+        \item Cubeorange
+        \item Holybro
+    \end{itemize}
+
+\section{Autopilot}
+    \subsection{PX4}
+        \subsection{PXmini}
+    \subsection{Ardupilot}
