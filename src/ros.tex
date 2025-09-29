@@ -1,13 +1,25 @@
 \chapter{ROS}
-    
-    
+
+\section{Concepts}
+\url{https://wiki.ros.org/ROS/Concepts}
+
+\section{Setup}
+    \subsection{TF}
+        \url{https://wiki.ros.org/navigation/Tutorials/RobotSetup/TF}
+        \begin{figure}
+            \centering
+            \includegraphics{/home/donkarlo/Dropbox/repo/robotic_learning_project/figs/tf}
+            \caption{}
+            \label{fig:tf}
+        \end{figure}
 \section{Names}
     see \url{https://wiki.ros.org/Names}
-    
-    Name structures are as follow:
-    /<namespace>/<node or topic or service>
-    such as /uav1/odometry/odom\_gps in which uav1 is a namespace and odometry is a sub namespace va \texttt{odom\_gps} is topic final name.
-    subname space doesnt exist in ROS jargon. It is just for explanation
+    \begin{itemize}
+        \item global
+        \item relative
+        \item private
+        \item base
+    \end{itemize}
 
 \section{TF}
     A package responsible for managing and publishing coordinate frames and transformation between them.
@@ -47,12 +59,33 @@
     To visualize logs
 \section{Bags}
 \section{Frames}
+     startes by world frame and then main robot's frame.
+    
+    Frames can have children. for example uav2/gps\_origin is the parent of uav2/fcu in which fcu is the the flight controller unit.
 \section{Parameters}
+    \url{https://wiki.ros.org/Parameter%20Server}
+    \subsection{Parameter server}
 \section{Services}
     request-response communication form. Such as calling gazebo/get\_model\_state and getting models location
 \section{Action}
-Is a combination of services and topics for a longterm task with feedback
+\url{https://wiki.ros.org/actionlib}
+\includepdf[pages=-]{/home/donkarlo/Dropbox/repo/robotic_learning_project/figs/action.pdf}
+Is a combination of services and topics for a longterm task with feedback and result and it could be terminated in the middle.
+    \paragraph{components}
+        \subparagraph{Action client}
+            Within application client
+        \subparagraph{Action server}
+            Within application server
+    
+    \paragraph{Messages}
+        \subparagraph{Goal}
+        \subparagraph{Feedback}
+        \subparagraph{Result}
 
+\section{Navigation}
+    \url{https://wiki.ros.org/navigation?distro=noetic}
+
+\section{Planning}
 \section{rviz}
     For visualizing data from sensors
 
