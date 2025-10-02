@@ -33,7 +33,9 @@
     \paragraph{time\_stamped}
         Each transform is published with timestamp
         
-    
+\section{ROSPlan}
+    The ROSPlan framework provides a collection of tools for AI Planning in a ROS system. ROSPlan has a variety of nodes which encapsulate planning, problem generation, and plan execution.
+    \url{https://kcl-planning.github.io/ROSPlan/documentation/}
 \section{Messages}
     \subsection{geometry\_msgs}
     \subsection{nav\_msgs}
@@ -53,6 +55,11 @@
         \end{itemize}
 \section{Node}
     Node a piece of runable code in ROS. It is either a c++/python code or a Gazebo plugin
+
+    to list the running node:
+    \begin{minted}{bash}
+        rosnode list
+    \end{minted}
 \section{RQT Graph}
     Is a visual tool that shows nodes as boxes and topics as ovals and the direction of the edges show publisher and subscriber nodes
 \section{RQT console}
@@ -68,8 +75,10 @@
 \section{Services}
     request-response communication form. Such as calling gazebo/get\_model\_state and getting models location
 \section{Action}
-\url{https://wiki.ros.org/actionlib}
-\includepdf[pages=-]{/home/donkarlo/Dropbox/repo/robotic_learning_project/figs/action.pdf}
+    \url{https://wiki.ros.org/actionlib}
+    \includepdf[pages=-]{/home/donkarlo/Dropbox/repo/robotic_learning_project/figs/action.pdf}
+    \subsection{Goal}
+
 Is a combination of services and topics for a longterm task with feedback and result and it could be terminated in the middle.
     \paragraph{components}
         \subparagraph{Action client}

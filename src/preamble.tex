@@ -1,21 +1,43 @@
 \documentclass{book}
 
-% --- Packages (order matters) ---
+% ----- Packages loaded before hyperref -----
 \usepackage{titlesec}
 \usepackage[table]{xcolor}
 \usepackage{array}
 \usepackage[colorinlistoftodos]{todonotes}
-\setcounter{tocdepth}{4}
 \usepackage{amsmath}
-\usepackage{graphicx}
+
+
+% Graphics
+\newcommand{\figspath}{/home/donkarlo/Dropbox/repo/phd_thesis/figs/}
+
+%% Tikz
 \usepackage{tikz}
-\usepackage{svg}
 \usetikzlibrary{graphs,graphdrawing,arrows.meta,mindmap,fit,positioning}
 \usegdlibrary{layered,force}
+
+%% images
+\usepackage{graphicx}
+\graphicspath{{/home/donkarlo/Dropbox/repo/language_learning_project/figs/}}
+%% SVG
+\usepackage{svg}
+
+%%pdf
+\usepackage{pdfpages}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{adjustbox}
+
+% Forest
 \usepackage[edges]{forest}
+
+% Floats and captions
 \usepackage{float}
 \usepackage{caption}
 \captionsetup{singlelinecheck=false}
+
+% Minted (needs -shell-escape)
 \usepackage{minted}
 \usemintedstyle{friendly}
 \setminted{
@@ -27,35 +49,43 @@
     autogobble,
 }
 \setminted[python]{fontsize=\footnotesize}
-
-% convenience
-\newcommand{\filepath}[1]{\href{file://#1}{\path{#1}}}
 \newcommand{\pyl}[1]{\mintinline{python}{#1}}
 
-% --- Load hyperlink packages LAST ---
-\usepackage[colorlinks=true]{hyperref}
-\usepackage{bookmark}   % better control over PDF outline
-\usepackage{etoolbox}   % to hook into \chapter
-
-% reset outline root at every chapter
-\pretocmd{\chapter}{\cleardoublepage\bookmarksetup{startatroot}}{}{}
-
-% optional: control outline depth/appearance
-\hypersetup{
-    bookmarksopen=true,
-    bookmarksopenlevel=2,
-    bookmarksnumbered=true
-}
-
-% TikZ colors (unchanged)
+% Colors and tikz styles (can stay here)
 \definecolor{mainfill}{HTML}{FFF2CC}
 \definecolor{mainborder}{HTML}{D6B656}
 \tikzset{
     mainnode/.style={
-        draw=mainborder, fill=mainfill, rectangle, align=center,
-        inner sep=5pt, rounded corners, line width=0.8pt, text=black,
+        draw=mainborder,
+        fill=mainfill,
+        rectangle,
+        align=center,
+        inner sep=5pt,
+        rounded corners,
+        line width=0.8pt,
+        text=black,
     }
 }
 
-% loading pdf
-\usepackage{pdfpages}
+% Depths
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+% ---- Load hyperref LAST (then bookmark, optional) ----
+\usepackage[unicode]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+    pdfstartview=FitH,
+    bookmarksopen=true,
+    bookmarksnumbered=true
+}
+% bookmarks
+\usepackage{bookmark}
+
+% Convenience macro
+\newcommand{\filepath}[1]{\href{file://#1}{\path{#1}}}
+
+
