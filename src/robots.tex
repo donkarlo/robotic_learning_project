@@ -1,0 +1,16 @@
+\chapter{Robots}
+\section{Quadcopters}
+    \subsection{Propplers}
+        \paragraph{Pitch}
+            the distance the proppler moves the air forward in one full rotation.
+            The \theta is the rotation dependent on the distance to the center of the proppler
+            \[
+            \text{Pitch}(r) = 2\pi r \times \tan\big(\theta(r)\big)
+            \]
+    \subsection{Rotors}
+        \includepdf[pages=-]{\figspath rotor}
+    \subsubsection{Brushless rotors}
+        \paragraph{ECG (Electronic Speed COntroller)}
+            provides the engine with patterns for it three phases as it has three magnetofields to connect voltage to each at once
+        \paragraph{PWM (Pulse with Modulation)}
+            is to determine how longe the voltage is established in microseconds

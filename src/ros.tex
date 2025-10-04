@@ -2,13 +2,35 @@
 
 \section{Concepts}
 \url{https://wiki.ros.org/ROS/Concepts}
+    \subsection{Filesystem level}
+        \begin{itemize}
+            \item packages
+            \item meta packages
+            \item package manifests
+            \item repositories
+            \item message/msg types
+            \item service/srv types
+        \end{itemize}
+    \subsection{Computation graph level concepts}
+        \begin{itemize}
+            \item Node \url{}
+            \item Master \url{}
+            \item Parameter server \url{}
+            \item messages \url{}
+            \item topics \url{}
+            \item services \url{}
+            \item bags \url{}
+        \end{itemize}
+    \subsection{Names}
+        bbc
+        
 
 \section{Setup}
     \subsection{TF}
         \url{https://wiki.ros.org/navigation/Tutorials/RobotSetup/TF}
         \begin{figure}
             \centering
-            \includegraphics{/home/donkarlo/Dropbox/repo/robotic_learning_project/figs/tf}
+            \includegraphics{\figspath ros/tf}
             \caption{}
             \label{fig:tf}
         \end{figure}
@@ -34,8 +56,8 @@
         Each transform is published with timestamp
         
 \section{ROSPlan}
-    The ROSPlan framework provides a collection of tools for AI Planning in a ROS system. ROSPlan has a variety of nodes which encapsulate planning, problem generation, and plan execution.
-    \url{https://kcl-planning.github.io/ROSPlan/documentation/}
+    The ROSPlan framework provides a collection of tools for AI Planning in a ROS system. ROSPlan has a variety of nodes which encapsulate plan, problem generation, and plan execution.
+    \url{https://kcl-plan.github.io/ROSPlan/documentation/}
 \section{Messages}
     \subsection{geometry\_msgs}
     \subsection{nav\_msgs}
@@ -76,10 +98,10 @@
     request-response communication form. Such as calling gazebo/get\_model\_state and getting models location
 \section{Action}
     \url{https://wiki.ros.org/actionlib}
-    \includepdf[pages=-]{/home/donkarlo/Dropbox/repo/robotic_learning_project/figs/action.pdf}
+    \includepdf[pages=-]{\figspath ros/action.pdf}
     \subsection{Goal}
 
-Is a combination of services and topics for a longterm task with feedback and result and it could be terminated in the middle.
+Is a combination of services and topics for a longterm mission with feedback and result and it could be terminated in the middle.
     \paragraph{components}
         \subparagraph{Action client}
             Within application client
@@ -97,8 +119,6 @@ Is a combination of services and topics for a longterm task with feedback and re
 \section{Planning}
 \section{rviz}
     For visualizing data from sensors
-
-\section{Goal}
 \section{MAVROS}
 \section{MAVLINK}
 \section{QGroundControl}

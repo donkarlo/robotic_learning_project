@@ -1,4 +1,7 @@
 \documentclass{book}
+\input{conf/main}
+% some shortcuts
+
 
 % ----- Packages loaded before hyperref -----
 \usepackage{titlesec}
@@ -8,9 +11,7 @@
 \usepackage{amsmath}
 
 
-% Graphics
-\newcommand{\figspath}{/home/donkarlo/Dropbox/repo/phd_thesis/figs/}
-
+% graphics
 %% Tikz
 \usepackage{tikz}
 \usetikzlibrary{graphs,graphdrawing,arrows.meta,mindmap,fit,positioning}
@@ -18,12 +19,15 @@
 
 %% images
 \usepackage{graphicx}
-\graphicspath{{/home/donkarlo/Dropbox/repo/language_learning_project/figs/}}
+
 %% SVG
 \usepackage{svg}
 
 %%pdf
 \usepackage{pdfpages}
+
+%%
+\usepackage{dirtree}
 
 % Tables
 \usepackage{booktabs}
@@ -49,7 +53,6 @@
     autogobble,
 }
 \setminted[python]{fontsize=\footnotesize}
-\newcommand{\pyl}[1]{\mintinline{python}{#1}}
 
 % Colors and tikz styles (can stay here)
 \definecolor{mainfill}{HTML}{FFF2CC}
@@ -85,7 +88,6 @@
 % bookmarks
 \usepackage{bookmark}
 
-% Convenience macro
-\newcommand{\filepath}[1]{\href{file://#1}{\path{#1}}}
+\input{preamble/macros}
 
 
